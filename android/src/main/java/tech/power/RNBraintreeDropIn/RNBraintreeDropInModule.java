@@ -61,6 +61,16 @@ public class RNBraintreeDropInModule extends ReactContextBaseJavaModule {
           .build());
 
       dropInRequest.googlePaymentRequest(googlePaymentRequest);
+    } else {
+        dropInRequest.disableGooglePayment();
+    }
+
+    if (!options.getBoolean("venmo")) {
+        dropInRequest.disableVenmo();
+    }
+
+    if (!options.getBoolean("paypal")) {
+	dropInRequest.disablePaypal();
     }
 
 
