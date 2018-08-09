@@ -62,6 +62,15 @@ RCT_REMAP_METHOD(show,
         request.applePayDisabled = YES;
     }
 
+    if(![options[@"venmo"] boolValue]) {
+	request.venmoDisabled = YES
+    }
+
+    if(![options[@"paypal"] boolValue]) {
+	request.paypalDisabled = YES
+    }
+
+
     BTDropInController *dropIn = [[BTDropInController alloc] initWithAuthorization:clientToken request:request handler:^(BTDropInController * _Nonnull controller, BTDropInResult * _Nullable result, NSError * _Nullable error) {
             [self.reactRoot dismissViewControllerAnimated:YES completion:nil];
 
