@@ -63,11 +63,11 @@ RCT_REMAP_METHOD(show,
     }
 
     if(![options[@"venmo"] boolValue]) {
-	request.venmoDisabled = YES
+	request.venmoDisabled = YES;
     }
 
     if(![options[@"paypal"] boolValue]) {
-	request.paypalDisabled = YES
+	request.paypalDisabled = YES;
     }
 
 
